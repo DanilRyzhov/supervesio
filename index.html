@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Super Mario Bros JS</title>
+
+  <link href="assets/css/reset.css" rel="stylesheet" />
+  <link href="assets/css/stylesheet.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-101227805-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <section class="myGif" id="myGifId">
+    <div class="myButton1">
+      <a href="#" class="fciA navItem" id="myButton"><span class="fciSpan">Начать</span></a>
+    </div>
+  </section>
+  <section class="main" id="myMain">
+    <img src="assets/images/hearts.png" class="heartsImg hide" id="loaderHeart" alt="">
+    <div class="description">
+      <div>
+        <h1>SuperVesio</h1>
+      </div>
+
+      <div class="controls">
+        <h2>Controls</h2>
+        <h3>Move Left: &#8678; / A</h3>
+        <h3>Move Right: &#8680; / D</h3>
+        <h3>Jump: &#8679; / W / Spacebar</h3>
+      </div>
+
+      <div id="mute-button"></div>
+      <div class="fourth-one"> </div>
+    </div>
+
+    <canvas id="game-canvas" width="760" height="600"></canvas>
+    <audio id="background_music" autoplay loop>
+      <source src="./assets/audio/music/heaven.mp3" type="audio/mp3" />
+    </audio>
+
+    <div class="contact">
+      <div class="info">
+        <!--<h2>Recreated by</h2>-->
+      </div>
+
+      <div class="links">
+        <h2>SuperVesio <br> Social Networks</h2>
+        <a target="_blank" rel="noopener noreferrer" href="https://vk.com/veslava_k">
+          <img id="github" alt="github link" src="assets/images/vk.png">
+        </a>
+
+        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/karasevaves/">
+          <img id="linkedin" alt="linkedin link" src="assets/images/instagram.png">
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script src="assets/javascripts/jquery.min.js"></script>
+<script src="assets/javascripts/bundle.js"></script>
+
+<script>
+  document.getElementById('myButton').addEventListener('click', buttonHandler)
+
+  function buttonHandler() {
+    localStorage.setItem('visited', JSON.stringify(true))
+    document.querySelector('#myGifId').classList.add('hide')
+    document.querySelector('#myMain').style.display = 'flex'
+  }
+</script>
+
+</html>
+
+<!-- Mute icons made by Madebyoliver. http://www.flaticon.com/authors/madebyoliver -->
